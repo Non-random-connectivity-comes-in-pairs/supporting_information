@@ -1,0 +1,59 @@
+\documentclass[11pt, paper=a4]{article}
+\usepackage[left=4.5cm, right=4.5cm, %showframe
+]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsthm}       
+\usepackage{amssymb} 
+
+\newcommand{\E}{\operatorname{\mathbf{E}}}
+\newcommand{\Var}{\operatorname{\mathbf{Var}}}
+
+\addtolength{\parskip}{\baselineskip}
+\parindent 0pt
+
+\begin{document}
+
+\section*{S1}
+
+Solving
+\begin{align}
+\mu = px + (1-p)y
+\end{align}
+for $p$ gives
+\begin{align}
+  p = \frac{\mu-y}{x-y},
+\end{align}
+%
+which, plugged into
+\begin{align}
+  \varrho = \frac{p x^2 + (1-p) y^2}{\mu^2},
+\end{align}
+yields
+\begin{align}
+  \varrho & = \frac{\left(\frac{\mu-y}{x-y}\right)x^2  + \left(1-\frac{\mu-y}{x-y}\right) y^2}{\mu^2} \\ & = \underbrace{\frac{(\mu - y)x^2}{(x-y)\mu^2}}_{\mathrm{(I)}}\,\, + \,\, \underbrace{\frac{y^2}{\mu^2}}_{\mathrm{(II)}}\,\, - \,\, \underbrace{\frac{(\mu - y)y^2}{(x-y) \mu^2}}_{\mathrm{(III)}}.
+\end{align}
+
+The summands are
+\begin{align}
+  \mathrm{(I):} \quad & \frac{(\mu - y)x^2}{(x-y)\mu^2} = \frac{x^2}{(x-y)\mu} - \frac{yx^2}{(x-y)\mu^2} \\
+  \mathrm{(II):} \quad &  \frac{y^2}{\mu^2} = \frac{(x-y)y^2}{(x-y)\mu^2} = \frac{xy^2}{(x-y)\mu^2} - \frac{y^3}{(x-y)\mu^2} \\
+  \mathrm{(III):} \quad & - \frac{(\mu - y)y^2}{(x-y) \mu^2} = \frac{y^3}{(x-y)\mu^2} - \frac{y^2}{(x-y)\mu}
+\end{align}
+
+Putting everything together we get
+\begin{align}
+  \varrho & =  \frac{x^2 - y^2}{(x-y)\mu} + \frac{xy^2 -yx^2}{(x-y)\mu^2}  = \frac{(x + y) (x-y)}{(x-y)\mu} - \frac{xy (x-y)}{(x-y)\mu^2} \\
+  & = \frac{x+y}{\mu} - \frac{xy}{\mu^2}.
+\end{align}
+
+\section*{S2}
+Solve
+\begin{align}
+  p = \frac{\mu-y}{x-y}
+\end{align}
+for $y$ and since $x \geq \mu$,
+\begin{align}
+y = \frac{\mu - px}{1-p} \leq \frac{\mu - p\mu}{1-p} = \mu.
+\end{align}
+\end{document}
